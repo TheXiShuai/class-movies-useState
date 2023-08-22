@@ -1,8 +1,22 @@
-# React + Vite
+# React useState
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this class we practice with useState.
+We are importing a json file to use it as a database.
 
-Currently, two official plugins are available:
+We create a variable using the useState hook and we use it to render the data in the json file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Every time we want to display different data or change the data we use the variable and the function that we get from the useState hook.
+
+for example:
+
+```javascript
+const [people, setPeople] = useState(data);
+
+const removeItem = (id) => {
+  let newPeople = people.filter((person) => person.id !== id);
+  setPeople(newPeople);
+};
+```
+
+If we don't update the state with the setPeople function, the data will not change.
+Every time the state variable changes, the component will re-render.
